@@ -1,0 +1,19 @@
+ALGORITHM insertion_sort
+VAR
+    arr : ARRAY_OF INTEGER[100];
+    n : INTEGER;
+    i , j ,key : INTEGER;
+BEGIN
+    n := arr.length
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        key := arr[i];
+        FOR j FROM i-1 TO 0 STEP -1  DO
+            IF (key > arr[j]) THEN
+                BREAK;
+            ELSE
+               arr[j+1]  := arr[j];
+            END_IF 
+        END_FOR
+        arr[j+1] := key;
+    END_FOR
+END
